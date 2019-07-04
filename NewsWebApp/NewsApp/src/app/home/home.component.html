@@ -10,11 +10,14 @@
         Sidenav content
   </mat-sidenav>
       <mat-sidenav-content>
-        <p>Events:</p>
-        <button mat-raised-button (click)="getHeadlines($event)"> 
+        <h3><p>Top Headlines</p></h3>
+        <!-- <button mat-raised-button> 
           Receive
-        </button>
+        </button> -->
         
+        <h4><div *ngFor="let list of newsList">
+          {{list.title}}
+        </div></h4>
         
       </mat-sidenav-content>
     </mat-sidenav-container>
