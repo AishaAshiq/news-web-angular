@@ -1,0 +1,30 @@
+  <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      News Headlines      
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+      <mat-sidenav #sidenav mode="over" >           
+        Sidenav content
+  </mat-sidenav>
+      <mat-sidenav-content>
+        <p>Events:</p>
+        <button mat-raised-button (click)="getHeadlines($event)"> 
+          Receive
+        </button>
+        
+        
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+
+ 
+
+
+
+
+
+ 
+
+  
