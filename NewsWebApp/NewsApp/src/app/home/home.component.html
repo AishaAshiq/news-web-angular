@@ -2,22 +2,41 @@
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      News Headlines      
+      Singapore News   
   </mat-toolbar>
 
   <mat-sidenav-container>
-      <mat-sidenav #sidenav mode="over" >           
-        Sidenav content
-  </mat-sidenav>
+      <mat-sidenav #sidenav mode="over"> 
+          <mat-nav-list >
+              <mat-list-item *ngFor="let category of categoryList" (click)="getBusinessList(category); sidenav.close();">{{category}} </mat-list-item>
+            </mat-nav-list>
+      </mat-sidenav>
       <mat-sidenav-content>
-        <h3><p>Top Headlines</p></h3>
-        <!-- <button mat-raised-button> 
-          Receive
-        </button> -->
-        
-        <h4><div *ngFor="let list of newsList">
-          {{list.title}}
-        </div></h4>
+        <h3><div>
+          {{this.newsTopic}} News
+        </div></h3>
+        <br><br>
+        <div *ngFor="let list of newsList">
+          <mat-card class="mat-card">
+            <mat-card-header>
+                <mat-card-title>
+                    Author: {{list.author}}
+                </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{list.urlToImage}}">
+            <mat-card-content>
+              <p>
+                {{list.description}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button>Like</button>
+              <button mat-raised-button>Share</button>
+            </mat-card-actions>
+         
+          </mat-card>
+          <!-- {{list.title}} -->
+        </div>
         
       </mat-sidenav-content>
     </mat-sidenav-container>

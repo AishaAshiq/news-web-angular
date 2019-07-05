@@ -16,3 +16,7 @@
   .mat-sidenav, .mat-sidenav-content {
     padding: 24px;
   }
+
+  .mat-card{
+    max-width: 500px;
+  }

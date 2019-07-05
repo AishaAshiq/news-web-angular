@@ -13,3 +13,7 @@ export interface News{
   "url" : string;
   "urlToImage" : string;  
 }
+
+export interface Categories{
+    "name" : Array<string>;
+}
